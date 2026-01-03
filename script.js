@@ -1,18 +1,22 @@
-function showProject(project) {
-    const popup = document.getElementById("popup");
-    const text = document.getElementById("popup-text");
+function toggleProject(card, projectId) {
+    // Collapse all other cards first to keep layout clean
+    const allCards = document.querySelectorAll('.project-card');
+    
+    allCards.forEach(c => {
+        if (c !== card) {
+            c.classList.remove('expanded');
+        }
+    });
 
-    if (project === "isl") {
-        text.innerText =
-            "ISL Gesture Translation converts Indian Sign Language gestures into readable text, improving accessibility and communication.";
-    } else {
-        text.innerText =
-            "Smart Warehouse Asset Tracker monitors temperature, humidity, and asset status using real-time dashboards.";
+    // Toggle the clicked card
+    card.classList.toggle('expanded');
+}
+
+// Optional: Close expanded card when clicking outside
+document.addEventListener('click', (e) => {
+    if (!e.target.closest('.project-card')) {
+        document.querySelectorAll('.project-card').forEach(c => {
+            c.classList.remove('expanded');
+        });
     }
-
-    popup.style.display = "block";
-}
-
-function closePopup() {
-    document.getElementById("popup").style.display = "none";
-}
+});
