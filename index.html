@@ -102,7 +102,7 @@
             <!-- Project 1 -->
             <div class="project-card" onclick="toggleProject(this, 'isl')">
                 <div class="card-image">
-                    <img src="images/isl.jpg" alt="ISL Project">
+                    <img src="./images/isl.jpg" alt="ISL Project">
                     <div class="tech-badge">Python</div>
                 </div>
                 <div class="card-content">
@@ -119,7 +119,7 @@
             <!-- Project 2 -->
             <div class="project-card" onclick="toggleProject(this, 'warehouse')">
                 <div class="card-image">
-                    <img src="images/warehouse.jpg" alt="Warehouse Project">
+                    <img src="./images/warehouse.jpg" alt="Warehouse Project">
                     <div class="tech-badge">IoT</div>
                 </div>
                 <div class="card-content">
@@ -168,14 +168,13 @@
                 </a>
             </div>
 
-            <form class="contact-form" action="mailto:laxmikoundinya@gmail.com" method="GET" enctype="text/plain">
+            <form class="contact-form" id="contactForm">
                 <div class="form-group">
-                    <input type="text" name="subject" placeholder="Your Name" required>
+                    <input type="text" id="senderName" placeholder="Your Name" required>
                 </div>
                 <div class="form-group">
-                    <textarea name="body" placeholder="Your Message" rows="5" required></textarea>
+                    <textarea id="senderMessage" placeholder="Your Message" rows="5" required></textarea>
                 </div>
-                <!-- Hidden input not needed for mailto, subject is handled by 'name' input if we want or just body -->
                 <button type="submit" class="send-btn">Send Message</button>
             </form>
         </div>
